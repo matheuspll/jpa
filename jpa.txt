@@ -1,0 +1,29 @@
+
+--- CONFIGURAÇÕES ---
+-> CRIAR PROJETO MAVEN NORMAL
+-> criar a pasta META-INF\persistence.xml
+-> criar banco de dados 
+-> baixar dependencias (driver jdbc, hibernate core 5.5.4, hibernate entitymanager)
+-> configurar persistence.xml
+
+-- CRIAR MODEL --
+- Criar a estrutura java\br.gov.ac.sefaz.vendas
+- criar o pacote model
+- Criar a classe Departamento
+- Criar o relacionamento entre as entidades OneToMany 
+ -- n precisa de construtor
+
+
+-- criar os departamentos, vendedores e depois salvar com os entitymanager
+
+
+
+
+
+
+== DUVIDAS == 
+DIFERENÇA JARKATAEE
+SCHEMA = https://pt.stackoverflow.com/questions/316045/qual-a-diferen%C3%A7a-de-schema-e-database
+
+
+br.gov.ac.sefaz.vendas
