@@ -27,3 +27,13 @@ SCHEMA = https://pt.stackoverflow.com/questions/316045/qual-a-diferen%C3%A7a-de-
 
 
 br.gov.ac.sefaz.vendas
+
+
+
+
+LINKS
+https://www.baeldung.com/hibernate-one-to-many
+https://cursos.alura.com.br/forum/topico-persistencecontext-cannot-parse-persistence-unit-from-class-path-resource-meta-inf-persistence-xml-46992
+https://blog.algaworks.com/jpa-many-to-one/
+http://www.universidadejava.com.br/materiais/jpa-manytoone/
+https://github.com/matheuspll/workshop-springboot2-jpa/tree/master/src/main/java/com/educandoweb/course/entities
