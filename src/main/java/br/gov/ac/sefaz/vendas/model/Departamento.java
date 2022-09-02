@@ -8,7 +8,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "tb_departamento")
-public class Departamento implements Serializable {
+public class Departamento implements Serializable, Base {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -28,7 +28,7 @@ public class Departamento implements Serializable {
         this.id = id;
         this.name = name;
     }
-
+    @Override
     public Long getId() {
         return id;
     }

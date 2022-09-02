@@ -2,12 +2,12 @@ package br.gov.ac.sefaz.vendas.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
 @Table(name = "tb_vendedor")
-public class Vendedor implements Serializable {
+public class Vendedor implements Serializable, Base {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -21,7 +21,7 @@ public class Vendedor implements Serializable {
     private String email;
 
     @Column(name = "birth_date", nullable = false)
-    private LocalDateTime birthDate;
+    private LocalDate birthDate;
 
     @Column(nullable = false)
     private Double baseSalary;
@@ -32,7 +32,7 @@ public class Vendedor implements Serializable {
 
     public Vendedor() {}
 
-    public Vendedor(Long id, String name, String email, LocalDateTime birthDate, Double baseSalary, Departamento departamento) {
+    public Vendedor(Long id, String name, String email, LocalDate birthDate, Double baseSalary, Departamento departamento) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -40,7 +40,7 @@ public class Vendedor implements Serializable {
         this.baseSalary = baseSalary;
         this.departamento = departamento;
     }
-
+    @Override
     public Long getId() {
         return id;
     }
@@ -65,11 +65,11 @@ public class Vendedor implements Serializable {
         this.email = email;
     }
 
-    public LocalDateTime getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(LocalDateTime birthDate) {
+    public void setBirthDate(LocalDate birthDate) {
         this.birthDate = birthDate;
     }
 
