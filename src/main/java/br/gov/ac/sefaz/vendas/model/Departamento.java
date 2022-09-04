@@ -21,13 +21,6 @@ public class Departamento implements Serializable, Base {
     @OneToMany(mappedBy = "departamento")
     private final Set<Vendedor> vendedores = new HashSet<>();
 
-    public Departamento() {
-    }
-
-    public Departamento(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
     @Override
     public Long getId() {
         return id;

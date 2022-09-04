@@ -15,14 +15,6 @@ public class Produto implements Serializable, Base {
     @Column(nullable = false, length = 60)
     private String name;
 
-    public Produto() {
-    }
-
-    public Produto(Long id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
     @Override
     public Long getId() {
         return id;
@@ -40,4 +32,11 @@ public class Produto implements Serializable, Base {
         this.name = name;
     }
 
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }
