@@ -8,7 +8,7 @@ import br.gov.ac.sefaz.vendas.util.ConnectionFactory;
 import java.util.Arrays;
 import java.util.List;
 
-public class ProdutoApp {
+public class VendedorApp {
 
     public static void main(String[] args) {
 
@@ -36,17 +36,6 @@ public class ProdutoApp {
         System.out.println("Iterando os produtos");
         produtos.forEach(System.out::println);
 
-
-        // buscando produto por nome
-        System.out.println("");
-        Produto celular = produtoService.findByName("Celular").get(0);
-        System.out.println(celular);
-
-
-        // buscando produto usando IN
-        System.out.println("");
-        Produto teclado =  produtoService.findById2(3L);
-        System.out.println(teclado);
 
         ConnectionFactory.closeEntityManagerFactory();
     }

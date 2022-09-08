@@ -6,11 +6,9 @@ import javax.persistence.Persistence;
 
 public class ConnectionFactory {
     private static EntityManagerFactory emf = null;
-    private static EntityManager em = null;
 
     public static EntityManagerFactory getEntityManagerFactory(String persistenceUnitName) {
         if (emf == null) {
-            System.out.println("EntitityManagerFactory É nullo");
             try {
                 emf = Persistence.createEntityManagerFactory(persistenceUnitName);
             } catch (Exception e) {

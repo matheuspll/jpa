@@ -1,7 +1,6 @@
 package br.gov.ac.sefaz.vendas.dao;
 
 import br.gov.ac.sefaz.vendas.model.Base;
-import br.gov.ac.sefaz.vendas.util.ConnectionFactory;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -90,5 +89,9 @@ public abstract class DAO<T extends Base> implements Serializable {
         } finally {
             em.close();
         }
+    }
+
+    public EntityManager getEntityManager() {
+        return em = emf.createEntityManager();
     }
 }

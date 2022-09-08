@@ -7,6 +7,8 @@
 
     <persistence-unit name="VendasPersistence" transaction-type="RESOURCE_LOCAL">
 
+        <!-- O hibernate já encontra as entidades automaticamente -->
+        <class>br.gov.ac.sefaz.vendas.model.Produto</class>
         <class>br.gov.ac.sefaz.vendas.model.Departamento</class>
         <class>br.gov.ac.sefaz.vendas.model.Vendedor</class>
 
