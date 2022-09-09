@@ -33,7 +33,6 @@ public class ProdutoService extends DAO<Produto> {
         return produtos;
     }
 
-
     // consultas personalizadas com JPQL - positional parameters
     public Produto findById2(Long id) {
         EntityManager em = getEntityManager();

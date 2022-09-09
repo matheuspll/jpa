@@ -1,7 +1,6 @@
 package br.gov.ac.sefaz.vendas.application;
 
 import br.gov.ac.sefaz.vendas.dao.DaoFactory;
-import br.gov.ac.sefaz.vendas.model.Produto;
 import br.gov.ac.sefaz.vendas.service.ProdutoService;
 import br.gov.ac.sefaz.vendas.util.ConnectionFactory;
 
@@ -15,22 +14,22 @@ public class ProdutoApp {
         // instancia o DAO de Produto
         ProdutoService produtoService = DaoFactory.criarProdutoDAO();
 
-        Produto p1 = new Produto();
+        br.gov.ac.sefaz.vendas.model.Produto p1 = new br.gov.ac.sefaz.vendas.model.Produto();
         p1.setName("Celular");
-        Produto p2 = new Produto();
+        br.gov.ac.sefaz.vendas.model.Produto p2 = new br.gov.ac.sefaz.vendas.model.Produto();
         p2.setName("Caixa de som");
-        Produto p3 = new Produto();
+        br.gov.ac.sefaz.vendas.model.Produto p3 = new br.gov.ac.sefaz.vendas.model.Produto();
         p3.setName("Teclado");
 
-        List<Produto> produtos = Arrays.asList(p1, p2, p3);
+        List<br.gov.ac.sefaz.vendas.model.Produto> produtos = Arrays.asList(p1, p2, p3);
 
         produtos.forEach(p -> produtoService.save(p));
 
-        Produto produto = produtoService.findById(Produto.class, 1L);
+        br.gov.ac.sefaz.vendas.model.Produto produto = produtoService.findById(br.gov.ac.sefaz.vendas.model.Produto.class, 1L);
         System.out.println("Produto com o id 1 = " + produto);
 
         System.out.println("\n --Lista de produtos --");
-        produtos = produtoService.findAll(Produto.class.getName());
+        produtos = produtoService.findAll(br.gov.ac.sefaz.vendas.model.Produto.class.getName());
         System.out.println(produtos); // passa a String da classe
 
         System.out.println("Iterando os produtos");
@@ -39,13 +38,13 @@ public class ProdutoApp {
 
         // buscando produto por nome
         System.out.println("");
-        Produto celular = produtoService.findByName("Celular").get(0);
+        br.gov.ac.sefaz.vendas.model.Produto celular = produtoService.findByName("Celular").get(0);
         System.out.println(celular);
 
 
         // buscando produto usando IN
         System.out.println("");
-        Produto teclado =  produtoService.findById2(3L);
+        br.gov.ac.sefaz.vendas.model.Produto teclado =  produtoService.findById2(3L);
         System.out.println(teclado);
 
         ConnectionFactory.closeEntityManagerFactory();

@@ -40,6 +40,7 @@ public class Vendedor implements Serializable, Base {
         this.baseSalary = baseSalary;
         this.departamento = departamento;
     }
+
     @Override
     public Long getId() {
         return id;

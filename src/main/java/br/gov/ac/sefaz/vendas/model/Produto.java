@@ -2,6 +2,9 @@ package br.gov.ac.sefaz.vendas.model;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_produto")
@@ -14,6 +17,19 @@ public class Produto implements Serializable, Base {
 
     @Column(nullable = false, length = 60)
     private String name;
+
+    @Column(nullable = false)
+    private Double price;
+
+
+    @ManyToMany(fetch=FetchType.EAGER)
+    @JoinTable(name = "tb_produto_categoria",
+            joinColumns = @JoinColumn(name = "produto_id"),
+            inverseJoinColumns = @JoinColumn(name = "categoria_id"))
+    private Set<Categoria> categorias = new HashSet<>();
+
+    public Produto() {
+    }
 
     @Override
     public Long getId() {
@@ -32,11 +48,38 @@ public class Produto implements Serializable, Base {
         this.name = name;
     }
 
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
+
+    public Set<Categoria> getCategorias() {
+        return categorias;
+    }
+
     @Override
     public String toString() {
         return "Produto{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", price=" + price +
+                ", categorias=" + categorias +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Produto produto = (Produto) o;
+        return Objects.equals(id, produto.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

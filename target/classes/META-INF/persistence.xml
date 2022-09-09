@@ -11,6 +11,7 @@
         <class>br.gov.ac.sefaz.vendas.model.Produto</class>
         <class>br.gov.ac.sefaz.vendas.model.Departamento</class>
         <class>br.gov.ac.sefaz.vendas.model.Vendedor</class>
+        <class>br.gov.ac.sefaz.vendas.model.Categoria</class>
 
         <!-- Propriedades JDBC -->
         <properties>
@@ -23,7 +24,7 @@
             <!--            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />-->
             <property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="javax.persistence.jdbc.user" value="root" />
-            <property name="javax.persistence.jdbc.password" value="root" />
+            <property name="javax.persistence.jdbc.password" value="" />
 
             <!-- Configurações específicas do Hibernate -->
             <property name="hibernate.hbm2ddl.auto" value="create" />

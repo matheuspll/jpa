@@ -7,26 +7,30 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "tb_departamento")
-public class Departamento implements Serializable, Base {
+@Table(name = "tb_categoria")
+public class Categoria implements Serializable, Base {
     private static final long serialVersionUID = 1L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false, length = 200)
     private String name;
 
-    @OneToMany(mappedBy = "departamento")
-    private final Set<Vendedor> vendedores = new HashSet<>();
+    @ManyToMany(mappedBy = "categorias")
+    private final Set<Produto> produtos = new HashSet<>();
 
-    public Departamento() {
+    public Categoria() {
+    }
+
+    public Categoria(Long id, String name) {
+        this.id = id;
+        this.name = name;
     }
 
     @Override
     public Long getId() {
-        return id;
+        return null;
     }
 
     public void setId(Long id) {
@@ -41,16 +45,16 @@ public class Departamento implements Serializable, Base {
         this.name = name;
     }
 
-    public Set<Vendedor> getVendedores() {
-        return vendedores;
+    public Set<Produto> getProdutos() {
+        return produtos;
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Departamento that = (Departamento) o;
-        return Objects.equals(id, that.id);
+        Categoria categoria = (Categoria) o;
+        return Objects.equals(id, categoria.id);
     }
 
     @Override
@@ -60,7 +64,7 @@ public class Departamento implements Serializable, Base {
 
     @Override
     public String toString() {
-        return "Departamento{" +
+        return "Categoria{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 '}';
