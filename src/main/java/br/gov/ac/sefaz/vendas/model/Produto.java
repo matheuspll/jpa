@@ -3,6 +3,7 @@ package br.gov.ac.sefaz.vendas.model;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Objects;
 import java.util.Set;
 
@@ -22,11 +23,17 @@ public class Produto implements Serializable, Base {
     private Double price;
 
 
-    @ManyToMany(fetch=FetchType.EAGER)
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "tb_produto_categoria",
             joinColumns = @JoinColumn(name = "produto_id"),
             inverseJoinColumns = @JoinColumn(name = "categoria_id"))
-    private final Set<Categoria> categorias = new HashSet<>();
+    private Set<Categoria> categorias = new HashSet<>();
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "tb_produto_pedido",
+            joinColumns = @JoinColumn(name = "produto_id"),
+            inverseJoinColumns = @JoinColumn(name = "pedido_id"))
+    private Set<Pedido> pedidos = new HashSet<>();
 
     public Produto() {
     }
@@ -60,6 +67,10 @@ public class Produto implements Serializable, Base {
         return categorias;
     }
 
+    public Set<Pedido> getPedidos() {
+        return pedidos;
+    }
+
     @Override
     public String toString() {
         return "Produto{" +
@@ -67,6 +78,7 @@ public class Produto implements Serializable, Base {
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", categorias=" + categorias +
+                ", pedidos=" + pedidos +
                 '}';
     }
 
