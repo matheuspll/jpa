@@ -10,7 +10,6 @@ import java.util.List;
 
 public class ProdutoService extends DAO<Produto> {
 
-
     public ProdutoService(EntityManagerFactory emf) {
         super(emf); // usando o construtor do pai
     }

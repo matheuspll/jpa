@@ -26,7 +26,7 @@ public class Produto implements Serializable, Base {
     @JoinTable(name = "tb_produto_categoria",
             joinColumns = @JoinColumn(name = "produto_id"),
             inverseJoinColumns = @JoinColumn(name = "categoria_id"))
-    private Set<Categoria> categorias = new HashSet<>();
+    private final Set<Categoria> categorias = new HashSet<>();
 
     public Produto() {
     }

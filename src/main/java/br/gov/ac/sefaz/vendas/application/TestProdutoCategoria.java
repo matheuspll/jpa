@@ -28,6 +28,9 @@ public class TestProdutoCategoria {
 
         categorias.forEach(c -> categoriaService.save(c));
 
+        System.out.println("Imprimindo todas as categorias: ");
+        categorias.forEach(c -> System.out.println(c));
+
         // instancia o DAO de Produto
         ProdutoService produtoService = DaoFactory.criarProdutoDAO();
 
@@ -61,7 +64,7 @@ public class TestProdutoCategoria {
         produtos.forEach(p -> produtoService.save(p));
 
 
-        System.out.println("imprimindo todos os produtos novamente");
+        System.out.println("\nimprimindo todos os produtos");
         produtos = produtoService.findAll(Produto.class.getName());
         produtos.forEach(p -> System.out.println(p));
 
