@@ -2,6 +2,7 @@ package br.gov.ac.sefaz.vendas.service;
 
 import br.gov.ac.sefaz.vendas.dao.DAO;
 import br.gov.ac.sefaz.vendas.model.Produto;
+import br.gov.ac.sefaz.vendas.pojo.RelatorioDeVendasPOJO;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -63,20 +64,41 @@ public class ProdutoService extends DAO<Produto> {
         return valorTotal;
     }
 
-    // buscar a soma de todos os produtos Notebook's em que o status estava pago
+    // busca a soma total de cada produto baseado no total de pedidos desse produto
     // mostrar o nome, soma_total, status. 15137.97
 
-    public List<Object[]> relatorioDeVendas() {
+    public List<Object[]> relatorioDeVendas1() {
 
         EntityManager em = getEntityManager();
-        String jpql = "SELECT p.name, sum(p.price), pe.dataPedido FROM tb_produto p\n" +
-                "INNER JOIN tb_produto_pedido pp ON p.id = pp.produto_id\n" +
-                "INNER JOIN tb_pedido pe ON pe.id = pp.pedido_id\n" +
-                "GROUP BY p.name\n" +
-                "ORDER BY p.price DESC;";
-        return em.createQuery(jpql, Object.class).getResultList();
+//        String jpql = "SELECT p.name, sum(p.price), pe.dataPedido FROM tb_produto p\n" +
+//                "INNER JOIN tb_produto_pedido pp ON p.id = pp.produto_id\n" +
+//                "INNER JOIN tb_pedido pe ON pe.id = pp.pedido_id\n" +
+//                "GROUP BY p.name\n" +
+//                "ORDER BY p.price DESC";
+
+        String jpql = "SELECT produto.name, SUM(produto.price), " +
+                "pedido.dataPedido FROM Produto produto " +
+                "JOIN produto.pedidos pedido " +
+                "GROUP BY produto.name ORDER BY produto.price DESC";
+        List<Object[]> relatorio = em.createQuery(jpql, Object[].class).getResultList();
+        em.close();
+        return relatorio;
     }
+    public List<RelatorioDeVendasPOJO> relatorioDeVendas2() {
 
+        EntityManager em = getEntityManager();
+        String jpql = "SELECT new br.gov.ac.sefaz.vendas.pojo.RelatorioDeVendasPOJO("
+                + "produto.name, "
+                + "SUM(produto.price), "
+                + "pedido.dataPedido) "
+                + "FROM Produto produto "
+                + "JOIN produto.pedidos pedido "
+                + "GROUP BY produto.name "
+                + "ORDER BY produto.price DESC";
 
-
+        List<RelatorioDeVendasPOJO> relatorio = em.createQuery(jpql, RelatorioDeVendasPOJO.class)
+                .getResultList();
+        em.close();
+        return relatorio;
+    }
 }

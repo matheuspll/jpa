@@ -2,6 +2,7 @@ package br.gov.ac.sefaz.vendas.application;
 
 import br.gov.ac.sefaz.vendas.dao.DaoFactory;
 import br.gov.ac.sefaz.vendas.model.*;
+import br.gov.ac.sefaz.vendas.pojo.RelatorioDeVendasPOJO;
 import br.gov.ac.sefaz.vendas.service.*;
 import br.gov.ac.sefaz.vendas.util.ConnectionFactory;
 
@@ -145,6 +146,19 @@ public class TestProduto {
         // Soma dos produtos
         System.out.println("Buscando o valor de média dos produtos: ");
         System.out.println("O valor total dos produtos é: " + produtoService.valorTotalProdutos());
+
+
+        // buscando relatorio
+        System.out.println("---------------- relatorio de vendas ----------------------- ");
+        List<Object[]> relatorio = produtoService.relatorioDeVendas1();
+
+        for (Object[] obj : relatorio) {
+            System.out.println(obj[0] + " - " + obj[1] + " - " + obj[2] + "\n");
+        }
+
+        System.out.println("\nBUscando relatorio POJO");
+        List<RelatorioDeVendasPOJO> relatorio2 = produtoService.relatorioDeVendas2();
+        relatorio2.forEach(x -> System.out.println(x));
 
         ConnectionFactory.closeEntityManagerFactory();
     }
