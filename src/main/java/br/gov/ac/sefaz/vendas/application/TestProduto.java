@@ -84,6 +84,8 @@ public class TestProduto {
         pedido3.setStatus("ENVIADO");
         pedido3.setVendedor(vendedor3);
         pedido4.setDataPedido(LocalDateTime.now());
+        pedido4.setStatus("ENVIADO");
+        pedido4.setVendedor(vendedor1);
         pedido5.setStatus("PAGO");
         pedido5.setVendedor(vendedor4);
 
