@@ -21,8 +21,8 @@ public class ProdutoService extends DAO<Produto> {
         try {
             String jpql = "SELECT p from Produto p WHERE p.name = :name";
             produtos = em.createQuery(jpql, Produto.class)
-                        .setParameter("name", name)
-                        .getResultList();
+                    .setParameter("name", name)
+                    .getResultList();
         } catch (Exception e) {
             produtos = new ArrayList<>();
             e.printStackTrace();
@@ -47,5 +47,19 @@ public class ProdutoService extends DAO<Produto> {
             em.close();
         }
         return produto;
+    }
+
+    public Double valorTotalProdutos() {
+        EntityManager em = getEntityManager();
+        String jpql;
+        Double valorTotal;
+        try {
+            jpql = "SELECT SUM(p.price) FROM Produto p";
+            valorTotal = em.createQuery(jpql, Double.class).getSingleResult();
+
+        } finally {
+            em.close();
+        }
+        return valorTotal;
     }
 }

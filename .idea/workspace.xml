@@ -5,15 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5baa6380-c3f7-406b-965c-43053fecdfa6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/application/TestProduto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/model/Pedido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/service/PedidoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/service/DepartamentoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/service/VendedorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/application/TestProduto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/application/TestProduto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/dao/DaoFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/dao/DaoFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/model/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/model/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/model/Departamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/model/Departamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/service/ProdutoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/service/ProdutoService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/gov/ac/sefaz/vendas/model/Produto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/gov/ac/sefaz/vendas/model/Produto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/gov/ac/sefaz/vendas/application/TestProduto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/gov/ac/sefaz/vendas/application/TestProduto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/gov/ac/sefaz/vendas/dao/DaoFactory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/gov/ac/sefaz/vendas/dao/DaoFactory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/gov/ac/sefaz/vendas/model/Departamento.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/gov/ac/sefaz/vendas/model/Departamento.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/br/gov/ac/sefaz/vendas/service/ProdutoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/gov/ac/sefaz/vendas/service/ProdutoService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,13 +65,14 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/temp2/treino/jpa-original/jpa"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="br.gov.ac.sefaz.vendas.service" />
@@ -89,8 +94,10 @@
       </method>
     </configuration>
     <configuration name="TestProduto" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
       <option name="MAIN_CLASS_NAME" value="br.gov.ac.sefaz.vendas.application.TestProduto" />
-      <module name="jpa-training" />
+      <module name="jpa" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="br.gov.ac.sefaz.vendas.application.*" />
@@ -146,6 +153,7 @@
       <updated>1662643271747</updated>
       <workItem from="1662643276356" duration="14350000" />
       <workItem from="1662987480810" duration="12472000" />
+      <workItem from="1663025655175" duration="4815000" />
     </task>
     <servers />
   </component>

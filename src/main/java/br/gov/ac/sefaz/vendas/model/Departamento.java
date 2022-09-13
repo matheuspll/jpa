@@ -19,7 +19,7 @@ public class Departamento implements Serializable, Base {
     private String name;
 
     @OneToMany(mappedBy = "departamento")
-    private final Set<Vendedor> vendedores = new HashSet<>();
+    private Set<Vendedor> vendedores = new HashSet<>();
 
     public Departamento() {
     }
