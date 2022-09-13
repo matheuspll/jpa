@@ -63,5 +63,20 @@ public class ProdutoService extends DAO<Produto> {
         return valorTotal;
     }
 
+    // buscar a soma de todos os produtos Notebook's em que o status estava pago
+    // mostrar o nome, soma_total, status. 15137.97
+
+    public List<Object[]> relatorioDeVendas() {
+
+        EntityManager em = getEntityManager();
+        String jpql = "SELECT p.name, sum(p.price), pe.dataPedido FROM tb_produto p\n" +
+                "INNER JOIN tb_produto_pedido pp ON p.id = pp.produto_id\n" +
+                "INNER JOIN tb_pedido pe ON pe.id = pp.pedido_id\n" +
+                "GROUP BY p.name\n" +
+                "ORDER BY p.price DESC;";
+        return em.createQuery(jpql, Object.class).getResultList();
+    }
+
+
 
 }
