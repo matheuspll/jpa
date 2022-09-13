@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5baa6380-c3f7-406b-965c-43053fecdfa6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/pojo/RelatorioDeVendasPOJO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/application/TestProduto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/application/TestProduto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/model/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/model/Produto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/service/ProdutoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/gov/ac/sefaz/vendas/service/ProdutoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/META-INF/persistence.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/gov/ac/sefaz/vendas/application/TestProduto.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/gov/ac/sefaz/vendas/application/TestProduto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/br/gov/ac/sefaz/vendas/application/TestProdutoCategoria.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/br/gov/ac/sefaz/vendas/service/ProdutoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/br/gov/ac/sefaz/vendas/service/ProdutoService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -147,7 +144,7 @@
       <workItem from="1662643276356" duration="14350000" />
       <workItem from="1662987480810" duration="12472000" />
       <workItem from="1663025655175" duration="8339000" />
-      <workItem from="1663102850577" duration="5111000" />
+      <workItem from="1663102850577" duration="6090000" />
     </task>
     <servers />
   </component>

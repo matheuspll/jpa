@@ -9,6 +9,8 @@ import java.util.Set;
 
 @Entity
 @Table(name = "tb_produto")
+@NamedQuery(name = "Produto.ProdutosPorCategoria",
+        query = "SELECT p FROM Produto p JOIN p.categorias c WHERE c.name = :name")
 public class Produto implements Serializable, Base {
     private static final long serialVersionUID = 1L;
 

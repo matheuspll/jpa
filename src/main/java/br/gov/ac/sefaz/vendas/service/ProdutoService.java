@@ -101,4 +101,13 @@ public class ProdutoService extends DAO<Produto> {
         em.close();
         return relatorio;
     }
+
+    public List<Produto> buscarPorNomeDaCategoria(String nome) {
+        EntityManager em = getEntityManager();
+        List<Produto> produtos = em.createNamedQuery("Produto.ProdutosPorCategoria", Produto.class)
+                .setParameter("name", nome)
+                .getResultList();
+        em.close();
+        return produtos;
+    }
 }

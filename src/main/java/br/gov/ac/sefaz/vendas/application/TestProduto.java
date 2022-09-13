@@ -160,6 +160,13 @@ public class TestProduto {
         List<RelatorioDeVendasPOJO> relatorio2 = produtoService.relatorioDeVendas2();
         relatorio2.forEach(x -> System.out.println(x));
 
+
+        // consultando todos os produtos, dado o nome de uma categoria
+
+        System.out.println("\n-> consultando todos os produtos, dado o nome de uma categoria");
+
+        produtoService.buscarPorNomeDaCategoria("Computadores").forEach(System.out::println);
+
         ConnectionFactory.closeEntityManagerFactory();
     }
 }
