@@ -1,13 +1,13 @@
-package br.gov.ac.sefaz.vendas.service;
+package br.gov.ac.sefaz.vendas.repository;
 
 import br.gov.ac.sefaz.vendas.dao.DAO;
 import br.gov.ac.sefaz.vendas.model.Categoria;
 
 import javax.persistence.EntityManagerFactory;
 
-public class CategoriaService extends DAO<Categoria> {
+public class CategoriaRepository extends DAO<Categoria> {
 
-    public CategoriaService(EntityManagerFactory emf) {
+    public CategoriaRepository(EntityManagerFactory emf) {
         super(emf);
     }
 }

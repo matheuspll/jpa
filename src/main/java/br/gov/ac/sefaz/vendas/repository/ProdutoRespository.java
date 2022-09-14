@@ -1,4 +1,4 @@
-package br.gov.ac.sefaz.vendas.service;
+package br.gov.ac.sefaz.vendas.repository;
 
 import br.gov.ac.sefaz.vendas.dao.DAO;
 import br.gov.ac.sefaz.vendas.model.Produto;
@@ -9,9 +9,9 @@ import javax.persistence.EntityManagerFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ProdutoService extends DAO<Produto> {
+public class ProdutoRespository extends DAO<Produto> {
 
-    public ProdutoService(EntityManagerFactory emf) {
+    public ProdutoRespository(EntityManagerFactory emf) {
         super(emf); // usando o construtor do pai
     }
 

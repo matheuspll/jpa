@@ -3,7 +3,7 @@ package br.gov.ac.sefaz.vendas.application;
 import br.gov.ac.sefaz.vendas.dao.DaoFactory;
 import br.gov.ac.sefaz.vendas.model.*;
 import br.gov.ac.sefaz.vendas.pojo.RelatorioDeVendasPOJO;
-import br.gov.ac.sefaz.vendas.service.*;
+import br.gov.ac.sefaz.vendas.repository.*;
 import br.gov.ac.sefaz.vendas.util.ConnectionFactory;
 
 import java.time.LocalDate;
@@ -25,7 +25,7 @@ public class TestProduto {
         List<Categoria> categorias = Arrays.asList(categoria1, categoria2,
                 categoria3, categoria4, categoria5);
 
-        CategoriaService categoriaService = DaoFactory.criarCategoriaDAO();
+        CategoriaRepository categoriaService = DaoFactory.criarCategoriaDAO();
 
         categorias.forEach(c -> categoriaService.save(c));
 
@@ -33,7 +33,7 @@ public class TestProduto {
         categorias.forEach(c -> System.out.println(c));
 
         /* --------------------------- DEPARTAMENTO -------------------------------*/
-        DepartamentoService departamentoService = DaoFactory.criarDepartamentoService();
+        DepartamentoRepository departamentoService = DaoFactory.criarDepartamentoService();
 
         Departamento departamento1 = new Departamento();
         Departamento departamento2 = new Departamento();
@@ -49,7 +49,7 @@ public class TestProduto {
 
 
         /* --------------------------- VENDEDOR -------------------------------*/
-        VendedorService vendedorService = DaoFactory.criarVendedorService();
+        VendedorRepository vendedorService = DaoFactory.criarVendedorService();
 
         Vendedor vendedor1 = new Vendedor(null, "Matheus Magalhães", "matheus.magalha95@gmail.com", LocalDate.now(),
                 3000.50, departamento1);
@@ -67,7 +67,7 @@ public class TestProduto {
 
 
         /* --------------------------- PEDIDO -------------------------------*/
-        PedidoService pedidoService = DaoFactory.criarPedidoDAO();
+        PedidoRepository pedidoService = DaoFactory.criarPedidoDAO();
 
         Pedido pedido1 = new Pedido();
         Pedido pedido2 = new Pedido();
@@ -94,7 +94,7 @@ public class TestProduto {
 
 
         /* --------------------------- PRODUTO -------------------------------*/
-        ProdutoService produtoService = DaoFactory.criarProdutoDAO();
+        ProdutoRespository produtoService = DaoFactory.criarProdutoDAO();
 
         Produto p1 = new Produto();
         p1.setName("Celular");

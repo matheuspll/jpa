@@ -2,7 +2,7 @@ package br.gov.ac.sefaz.vendas.application;
 
 import br.gov.ac.sefaz.vendas.dao.DaoFactory;
 import br.gov.ac.sefaz.vendas.model.Produto;
-import br.gov.ac.sefaz.vendas.service.ProdutoService;
+import br.gov.ac.sefaz.vendas.repository.ProdutoRespository;
 import br.gov.ac.sefaz.vendas.util.ConnectionFactory;
 
 import java.util.Arrays;
@@ -13,7 +13,7 @@ public class ProdutoApp {
     public static void main(String[] args) {
 
         // instancia o DAO de Produto
-        ProdutoService produtoService = DaoFactory.criarProdutoDAO();
+        ProdutoRespository produtoService = DaoFactory.criarProdutoDAO();
 
         Produto p1 = new Produto();
         p1.setName("Celular");
